@@ -1,3 +1,4 @@
+  
 import ast
 import re
 
@@ -13,7 +14,7 @@ class FeatureExtractor:
         with open (self.path, "r") as f:
             self.data= ' '.join([line for line in f.readlines()])
         self.pages= re.findall(FeatureExtractor.page_ident, self.data)
-        if self.bank== 'TEMPLATE1':
+        if self.template== 'TEMPLATE1':
             self.cust_id= [[1212, 330],[1209, 417],[1198, 417],[1201, 330]]
             self.account= [[1199, 329],[1196, 424],[1185, 424],[1188, 329]]
             self.mail= [[309, 877],[316,595],[340,596],[333, 878]]
