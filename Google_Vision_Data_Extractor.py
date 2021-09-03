@@ -7,9 +7,9 @@ class FeatureExtractor:
     change_tup= (('y:', ','),('bounding_poly', ', "bounding_poly":'),(r'\n', ''),(r'{', '['),(r'}', '],'),
                          ('vertices', ''), (r'], ], ', ']]}'), (r'description', '{"description"'), (r' ', ''), (r'x:', ''))
        
-    def __init__(self, bank, path):
+    def __init__(self, template, path):
         self.path= path
-        self.bank= bank
+        self.template= template
         with open (self.path, "r") as f:
             self.data= ' '.join([line for line in f.readlines()])
         self.pages= re.findall(FeatureExtractor.page_ident, self.data)
@@ -35,7 +35,7 @@ class FeatureExtractor:
     def get_all_text(self):
         '''This method returns a List of all identified text as List of dictionary.
         Usage:
-        fe= FeatureExtractor(bank='IDFC', path='extract1.txt')
+        fe= FeatureExtractor(template='TEMPLATE1', path='extract1.txt')
         fe.get_all_text()
         '''
         self.page_list=[]
