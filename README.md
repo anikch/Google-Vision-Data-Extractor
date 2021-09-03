@@ -6,6 +6,7 @@ get_features() method can be used to build a custom template to get values of di
 In this method you can add all your required templates.
 
 >> fe= FeatureExtractor(template='TEMPLATE1', path=inp1)
+>> 
 >> fe.get_features()
 
 {'Mail': 'xxxxxxx@gmail.com',
